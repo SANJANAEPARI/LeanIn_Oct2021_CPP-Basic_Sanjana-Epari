@@ -1,0 +1,161 @@
+a.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int i,j;
+	
+	for( i=1;i<=5;i++)
+	{
+		
+		for(j=1;j<=5;j++)
+		{
+			cout<<"*";
+
+			}
+			cout<<endl;
+		}
+		   
+		
+	}
+
+
+
+
+
+
+
+b.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int i,j;
+	
+	for( i=1;i<=5;i++)
+	{
+		
+		for(j=1;j<=5;j++)
+		{
+			if(j<=i)
+			cout<<"*";
+			else
+			cout<<" ";
+
+			}
+			cout<<endl;
+		}
+		   
+		
+	}
+
+
+
+
+
+
+c.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int i,j;
+	
+	for( i=1;i<=5;i++)
+	{
+		
+		for(j=1;j<=5;j++)
+		{
+			cout<< j ;
+
+			}
+			cout<<endl;
+		}
+		   
+		
+	}
+
+
+
+
+d.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int i,j;
+	
+	for( i=1;i<=5;i++)
+	{
+		
+		for(j=1;j<=5;j++)
+		{
+			if(j<=i)
+			cout<< j ;
+			else
+			cout<<" ";
+
+			}
+			cout<<endl;
+		}
+		   
+		
+	}
+
+
+
+
+
+
+
+
+Q2.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int i,j;
+	
+	for( i=1;i<=50;i++)
+	{
+		if(i%3==0)
+		cout<<i<<endl;
+		}
+		   
+		
+	}
+
+
+
+
+
+Q3.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int i,j;
+	
+	for(int i=1; i <= 50; ++i)
+     {
+	   if (i % 15 == 0) {
+cout << "FizzBuzz \n";
+}
+else if(i % 3 == 0){
+cout << "Fizz \n";
+}
+ else if (i % 5 == 0) {
+cout << "Buzz \n";
+}
+else{
+cout << i << "\n";
+}
+}
+		
+	}
