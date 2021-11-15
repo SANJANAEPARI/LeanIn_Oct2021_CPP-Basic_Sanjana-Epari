@@ -1,0 +1,141 @@
+1.
+#include <iostream>
+#include<conio.h>
+#include<stdlib.h>
+
+#define MAX_SIZE 5
+
+using namespace std;
+
+void linear_search(int[], int);
+
+int main() {
+    int arr_search[MAX_SIZE], i, element;
+
+    cout << "Simple C++ Linear Search Example - Array and Functions\n";
+    cout << "\nEnter " << MAX_SIZE << " Elements for Searching : " << endl;
+    for (i = 0; i < MAX_SIZE; i++)
+        cin >> arr_search[i];
+
+    cout << "\nYour Data   :";
+    for (i = 0; i < MAX_SIZE; i++) {
+        cout << "\t" << arr_search[i];
+    }
+
+    cout << "\nEnter Element to Search : ";
+    cin>>element;
+
+    //Linear Search Function
+    linear_search(arr_search, element);
+
+    getch();
+}
+
+void linear_search(int fn_arr[], int element) {
+    int i;
+
+    /* for : Check elements one by one - Linear */
+    for (i = 0; i < MAX_SIZE; i++) {
+        /* If for Check element found or not */
+        if (fn_arr[i] == element) {
+            cout << "\nLinear Search : Element  : " << element << " : Found :  Position : " << i + 1 << ".\n";
+            break;
+        }
+    }
+
+    if (i == MAX_SIZE)
+        cout << "\nSearch Element : " << element << "  : Not Found \n";
+}
+
+
+
+2.
+#include <iostream>
+#include<conio.h>
+#include<stdlib.h>
+
+#define MAX_SIZE 5
+
+using namespace std;
+
+void binary_search(int[], int);
+
+int main() {
+    int arr_search[MAX_SIZE], i, element;
+
+    cout << "Simple C++ Binary Search Example - Array and Functions\n";
+    cout << "\nEnter " << MAX_SIZE << " Elements for Searching : " << endl;
+    for (i = 0; i < MAX_SIZE; i++)
+        cin >> arr_search[i];
+
+    cout << "\nYour Data   :";
+    for (i = 0; i < MAX_SIZE; i++) {
+        cout << "\t" << arr_search[i];
+    }
+
+    cout << "\nEnter Element to Search : ";
+    cin>>element;
+
+
+    binary_search(arr_search, element);
+    getch();
+}
+
+void binary_search(int fn_arr[], int element) {
+    int f = 0, r = MAX_SIZE, mid;
+
+    while (f <= r) {
+        mid = (f + r) / 2;
+
+        if (fn_arr[mid] == element) {
+            cout << "\nSearch Element  : " << element << " : Found :  Position : " << mid + 1 << ".\n";
+            break;
+        } else if (fn_arr[mid] < element)
+            f = mid + 1;
+        else
+            r = mid - 1;
+    }
+
+    if (f > r)
+        cout << "\nSearch Element : " << element << "  : Not Found \n";
+
+    getch();
+}
+
+
+
+4.
+#include <iostream>
+using namespace std;
+
+int main(){
+	int a, b, c;
+	cout << "Enter the Size of array\n";	//taking input for the size of array
+	cin >> a >> b >> c;
+	int arr[a][b][c];	//array of required size declared
+
+	for (int i = 0; i < a; ++i)	//counter for first dimension
+	{
+		for (int j = 0; j < b; ++j)	//counter for second dimension
+		{
+			for (int k = 0; k < c; ++k)	//counter for third dimension
+			{
+				cout << "\nEnter value at position[" << i << "]" << "[" << j << "]" << "[" << k << "]";
+
+				cin >> arr[i][j][k];	//taking input in the set counter
+			}
+		}
+	}
+
+	for (int i = 0; i < a; ++i)	//printing the array values as set
+	{
+		for (int j = 0; j < b; ++j)
+		{
+			for (int k = 0; k < c; ++k)
+			{
+				cout << "\nValue at position[" << i << "]" << "[" << j << "]" << "[" << k << "]= " << arr[i][j][k];
+			}
+		}
+	}
+	return 0;
+}
