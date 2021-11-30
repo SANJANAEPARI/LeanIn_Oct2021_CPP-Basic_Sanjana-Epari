@@ -1,0 +1,321 @@
+1
+#include<iostream>
+using namespace std;
+
+int main() {
+int number, reverse = 0;
+cout<<"Input a Number to Reverse : ";
+ cin>> number;     
+
+   while(number!= 0)
+   {
+      reverse = reverse * 10;
+      reverse = reverse + number%10;
+      number = number/10;
+   }
+   cout<<"New Reversed Number is:  "<<reverse;
+   return 0;
+
+}
+
+
+
+2
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+  int n,r,sum=0,temp;    
+  cout<<"Enter the Number=";    
+  cin>>n;    
+ temp=n;    
+ while(n>0)    
+{    
+ r=n%10;    
+ sum=(sum*10)+r;    
+ n=n/10;    
+}    
+if(temp==sum)    
+cout<<"Number is Palindrome.";    
+else    
+cout<<"Number is not Palindrome.";   
+  return 0;  
+}  
+
+
+
+3
+#include <iostream>
+using namespace std;
+  
+// Function to insert x in arr at position pos
+int* insertX(int n, int arr[],int x, int pos)
+{
+    int i;
+  
+    // increase the size by 1
+    n++;
+  
+    // shift elements forward
+    for (i = n; i >= pos; i--)
+        arr[i] = arr[i - 1];
+  
+    // insert x at pos
+    arr[pos - 1] = x;
+  
+    return arr;
+}
+  
+
+int main()
+{
+    int arr[100];
+    int i, x, pos,n;
+
+     cout<<"Enter the number of elements in array:  ";
+     cin>>n;    
+  
+    cout<<"Enter the elements of the array  ";
+    for (i = 0; i<n; i++)
+        cin>>arr[i];
+  
+    cout<<"The original array is:  ";
+    for (i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+  
+    cout<<"Enter the element to be inserted:  ";
+    cin>>x;
+  
+    cout<<"Enter the position at which element is to be inserted:  ";
+    cin>>pos;
+  
+    insertX(n, arr, x, pos);
+  
+    cout<<"The updated array is:  ";
+    for (i = 0; i < n + 1; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+  
+    return 0;
+}
+
+
+
+4
+#include <iostream>
+using namespace std;
+ 
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+ 
+// A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n-1; i++)    
+     
+    // Last i elements are already in place
+    for (j = 0; j < n-i-1; j++)
+        if (arr[j] > arr[j+1])
+            swap(&arr[j], &arr[j+1]);
+}
+ 
+
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        cout<< arr[i] << " ";
+        cout<< endl;
+}
+ 
+
+int main()
+{
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    bubbleSort(arr, n);
+    cout<<"Sorted array: \n";
+    printArray(arr, n);
+    return 0;
+}
+
+
+
+4b
+
+#include <iostream>
+using namespace std;
+ 
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+ 
+void selectionSort(int arr[], int n)
+{
+    int i, j, min_idx;
+ 
+    // One by one move boundary of unsorted subarray
+    for (i = 0; i < n-1; i++)
+    {
+        // Find the minimum element in unsorted array
+        min_idx = i;
+        for (j = i+1; j < n; j++)
+        if (arr[j] < arr[min_idx])
+            min_idx = j;
+ 
+        // Swap the found minimum element with the first element
+        swap(&arr[min_idx], &arr[i]);
+    }
+}
+
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i=0; i < size; i++)
+        cout<< arr[i] << " ";
+    cout<<endl;
+}
+ 
+
+int main()
+{
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    selectionSort(arr, n);
+    cout << "Sorted array: \n";
+    printArray(arr, n);
+    return 0;
+}
+
+
+
+4c
+#include<iostream>
+using namespace std;
+
+void insertionSort(int arr[], int n)
+{
+    int i, key, j;
+    for (i = 1; i < n; i++)
+    {
+        key = arr[i];
+        j = i - 1;
+ 
+        
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+ 
+
+void printArray(int arr[], int n)
+{
+    int i;
+    for (i = 0; i < n; i++)
+        cout<< arr[i] << " ";
+    cout<<endl;
+}
+ 
+
+int main()
+{
+    int arr[] = { 12, 11, 13, 5, 6 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+ 
+    insertionSort(arr, n);
+    printArray(arr, n);
+ 
+    return 0;
+}
+
+
+
+5
+#include<iostream>
+
+
+using namespace std;
+
+int main()
+{
+       int a[10], i, largest = 0, second_largest = 0, pos1, pos2;
+       int n;
+       cout << "Enter Number of elements :";
+       cin>>n;
+       for (i = 0; i<n; ++i)
+       {
+              cout << "Enter " << (i + 1) << "th Element :";
+              cin >> a[i];
+       }
+       //Finding Largest
+       for (i = 0; i<n; ++i)
+       {
+              if (a[i]>largest)
+              {
+                     largest = a[i];
+                     pos1 = i;
+              }
+       }
+       //finding second largset
+       for (i = 0; i<n; ++i)
+       {
+              if (a[i]>second_largest)
+              {
+                     if (a[i] == largest)
+                           continue;              //Ignoring largest in order to get second largest
+                     second_largest = a[i];
+                     pos2 = i;
+              }
+       }
+       cout << "Largest Number :" << largest << " at position " << (pos1 + 1);
+       cout<<endl;
+       cout << "Second Largest Number :"<< second_largest << " at position " << (pos2 + 1);
+
+       
+       return 0;
+}
+
+
+
+
+4.
+#include<iostream>
+using namespace std;
+
+int main() {
+
+    char str[100], temp;
+    int size = 0, i = 0;
+
+    cout << "Enter a string:";
+    cin.getline(str, 100);
+
+    while (str[size] != '\0') {
+        size++;
+    }
+
+    size = size - 1;
+    while (i < size) {
+        temp = str[i];
+        str[i] = str[size];
+        str[size] = temp;
+        size--;
+        i++;
+    }
+    cout << "After reverse string:" << str;
+
+    return 0;
+}
